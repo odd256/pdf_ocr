@@ -1,0 +1,8 @@
+.agents
+.venv
+docs
+output
+pdfs
+*/__pycache__
+config.toml
+skills-lock.json

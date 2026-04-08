@@ -1,0 +1,40 @@
+[paths]
+# PDF 存放目录
+input_folder = "./pdfs"
+# 提取后保存的数据文件
+output_file = "./output/output.jsonl"
+
+[llm]
+# 兼容 OpenAI 的 API 服务器地址（如 Ollama, vLLM 等）
+base_url = "https://xxx"
+api_key = "xxx"
+# 用于提取字段的模型名称
+model = "xxx"
+
+[processing]
+# 配置各块独立解析与抽取模式
+[[processing.pages]]
+page = 3
+type = "text"
+fields = ["测试1", "测试2", "测试3", "测试4", "测试5"]
+
+[[processing.pages]]
+page = 6
+type = "table"
+fields = [
+    "测试1",
+    "测试2",
+    "测试3",
+]
+
+[[processing.pages]]
+page = "9-16"
+type = "text"
+fields = [
+    { name = "测试1", description = "字段范围：强中弱，没有就填无" },
+    { name = "测试2", description = "字段范围：强中弱，没有就填无" },
+    { name = "测试3", description = "字段范围：强中弱，没有就填无" },
+    { name = "测试4", description = "字段范围：强中弱，没有就填无" },
+    { name = "测试5", description = "字段范围：强中弱，没有就填无" },
+    { name = "测试6", description = "字段范围：强中弱，没有就填无" },
+]
